@@ -1,5 +1,5 @@
 <template>
-  <button :type="props.type">
+  <button class="general-button" :type="props.type">
     <slot />
   </button>
 </template>
@@ -14,3 +14,14 @@ const props = withDefaults(defineProps<PropsType>(), {
   color: '--color-primary'
 })
 </script>
+
+<style lang="scss" scoped>
+@import '~/assets/styles/partials/index';
+
+.general-button {
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+</style>

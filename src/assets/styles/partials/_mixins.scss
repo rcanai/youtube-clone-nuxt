@@ -1,0 +1,46 @@
+// 文字切れ3点リーダー（複数行）
+@mixin text-ellipsis-multi($row: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+
+// 文字切れ3点リーダー（1行）
+@mixin text-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 文字切れ3点リーダー（消す）
+@mixin text-ellipsis-remove() {
+  overflow: initial;
+  white-space: initial;
+  text-overflow: initial;
+  -webkit-line-clamp: initial;
+  -webkit-box-orient: initial;
+}
+
+// ブレークポイント
+$breakpoint-min: (
+  tb: 'screen and (min-width: #{$min-width-tb})', // タブレットの最大幅より大きい場合
+  pc: 'screen and (min-width: #{$min-width-pc})', // PCの最大幅より大きい場合
+);
+$breakpoint-max: (
+  sp: 'screen and (max-width: #{$min-width-tb})', // タブレットの最大幅より小さい場合はスマホ扱い
+  tb: 'screen and (max-width: #{$min-width-pc})', // PCの最大幅より小さい場合はタブレット扱い
+);
+
+// メディアクエリ
+@mixin media-min($bp) {
+  @media #{map-get($breakpoint-min, $bp)} {
+    @content;
+  }
+}
+
+@mixin media-max($bp) {
+  @media #{map-get($breakpoint-max, $bp)} {
+    @content;
+  }
+}

@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent="submit">
       <div>
-        <InputText v-model="form.name" />
+        <FormInput v-model="form.name" />
       </div>
       <div>
         <GeneralButton type="submit">
@@ -14,11 +14,11 @@
 </template>
 
 <script lang="ts" setup>
-import InputText from '@/components/atoms/InputText.vue'
+import FormInput from '~~/src/components/molecules/FormInput.vue'
 import GeneralButton from '@/components/atoms/GeneralButton.vue'
 
 defineComponent({
-  InputText,
+  FormInput,
   GeneralButton
 })
 

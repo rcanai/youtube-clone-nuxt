@@ -1,0 +1,9 @@
+@use "sass:math";
+
+// サイズを返す
+//   - サイズを指定する際はできるだけこのfunctionを使用する
+//   - ただしborderなどは固定の太さな事が多いので別途ps指定が望ましい
+@function size($value) {
+  // pxをremに変換
+  @return math.div($value, 16) + rem;
+}
