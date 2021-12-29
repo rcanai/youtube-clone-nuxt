@@ -5,7 +5,9 @@
         E
       </div>
       <div class="header-logo">
-        YouTube
+        <NuxtLink to="/">
+          YouTube
+        </NuxtLink>
       </div>
       <div class="header-search">
         <FormInput type="text">
@@ -42,34 +44,25 @@ defineComponent({
 
   .container {
     height: 100%;
-    display: grid;
-    grid-template-columns: size(40) size(120) size(450) auto;
-    grid-template-rows: 100%;
-    justify-items: center;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
   }
 
   .header-menu {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    //
   }
 
   .header-logo {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    //
   }
 
   .header-search {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
+    //
   }
 
   .header-actions {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    //
   }
 }
 </style>
