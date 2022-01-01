@@ -1,5 +1,15 @@
 <template>
-  <div id="the-menu">
+  <div v-if="showMenu" id="the-menu">
+    <div class="menu-head">
+      <a class="header-menu" @click.prevent="global.toggleMenu">
+        E
+      </a>
+      <div class="header-logo">
+        <NuxtLink to="/">
+          YouTube
+        </NuxtLink>
+      </div>
+    </div>
     <ul class="menu-list">
       <li v-for="menuItem in menu1" :key="menuItem.to" class="menu-list-item">
         <NuxtLink class="item-link" to="/fixme">
@@ -50,6 +60,11 @@
 </template>
 
 <script lang="ts" setup>
+import { globalStore } from '~/store/globalStore'
+
+const global = globalStore()
+const showMenu = computed(() => global.getShowMenu)
+
 type Menu = {
   to: string,
   text: string,
@@ -97,8 +112,21 @@ const menu5: Menu[] = [
 @import '~/assets/styles/partials/index';
 
 #the-menu {
-  height: calc(100vh - #{$header-height}); // ヘッダーの高さを引く）
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: size($menu-width-large);
+  height: 100vh;
   overflow: auto;
+  background-color: var(--color-white);
+  z-index: $header-z-index - 1;
+
+  .menu-head {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: size($header-height);
+  }
 
   .item-link {
     height: size(40);

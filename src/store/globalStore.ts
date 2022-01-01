@@ -1,18 +1,26 @@
 import { defineStore } from 'pinia'
 
-export const globalStore = defineStore("global", {
+export const globalStore = defineStore('global', {
   state: () => ({
-    count: 0
+    count: 0,
+    showMenu: false
   }),
   getters: {
-    getCount: (state) => state.count
+    getCount: state => state.count,
+    getShowMenu: state => state.showMenu
   },
   actions: {
-    resetCount() {
+    resetCount () {
       this.count = 0
     },
-    addCount() {
+    addCount () {
       this.count += 1
-    }  
+    },
+    toggleMenu () {
+      this.showMenu = !this.showMenu
+    },
+    setShowMenu (bool: boolean) {
+      this.showMenu = bool
+    }
   }
 })

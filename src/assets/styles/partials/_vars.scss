@@ -1,4 +1,8 @@
-$header-height: 56px;
+$header-height: 56;
+$header-z-index: 100;
 
-$min-width-tb: 600px; // タブレットの最小値
-$min-width-pc: 800px; // PCの最小値
+$menu-width-large: 240;
+$menu-width-small: 72;
+
+$min-width-tb: 600; // タブレットの最小値
+$min-width-pc: 800; // PCの最小値

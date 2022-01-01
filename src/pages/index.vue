@@ -13,4 +13,8 @@ defineComponent({
   TopInformation,
   ListFilter
 })
+
+useMeta({
+  title: ''
+})
 </script>

@@ -1,9 +1,9 @@
 <template>
   <header id="the-header">
     <div class="container">
-      <div class="header-menu">
+      <a class="header-menu" @click.prevent="global.toggleMenu">
         E
-      </div>
+      </a>
       <div class="header-logo">
         <NuxtLink to="/">
           YouTube
@@ -29,18 +29,27 @@
 <script lang="ts" setup>
 import FormInput from '~~/src/components/molecules/FormInput.vue'
 import GeneralButton from '@/components/atoms/GeneralButton.vue'
+import { globalStore } from '~/store/globalStore'
 
 defineComponent({
   FormInput,
   GeneralButton
 })
+
+const global = globalStore()
 </script>
 
 <style lang="scss" scoped>
 @import '~/assets/styles/partials/index';
 
 #the-header {
-  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: size($header-height);
+  z-index: $header-z-index;
+  background-color: var(--color-white);
 
   .container {
     height: 100%;
@@ -50,7 +59,10 @@ defineComponent({
   }
 
   .header-menu {
-    //
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-logo {

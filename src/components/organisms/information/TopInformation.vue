@@ -18,7 +18,7 @@
 
 .top-information {
   width: 100%;
-  height: $header-height;
+  height: size($header-height);
   background-color: #F2F8FE; // FIXME: var化
   display: flex;
   flex-flow: row nowrap;

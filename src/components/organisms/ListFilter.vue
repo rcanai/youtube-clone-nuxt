@@ -36,7 +36,7 @@ const items: Item[] = [
 
 .list-filter {
   width: 100%;
-  height: $header-height;
+  height: size($header-height);
   overflow: auto;
   background-color: var(--color-white);
 

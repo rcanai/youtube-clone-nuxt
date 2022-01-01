@@ -12,3 +12,7 @@ body {
   background-color: var(--color-light);
   color: var(--color-primary);
 }
+
+a, button {
+  cursor: pointer;
+}
