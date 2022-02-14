@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const globalStore = defineStore('global', {
   state: () => ({
     count: 0,
-    showMenu: false
+    showMenu: true
   }),
   getters: {
     getCount: state => state.count,

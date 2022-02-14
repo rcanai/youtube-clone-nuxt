@@ -39,12 +39,28 @@ const items: Item[] = [
   height: size($header-height);
   overflow: auto;
   background-color: var(--color-white);
+  border-top: thin solid var(--color-gray);
+  border-bottom: thin solid var(--color-gray);
+  padding: size(12);
+  white-space: nowrap;
 
   .filter-list {
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+  }
+
+  .filter-list-item {
+    margin-right: size(12);
+
+    .item-link {
+      display: block;
+      padding: 0 size(12);
+      background-color: var(--color-lightgray);
+      border: thin solid var(--color-gray);
+      border-radius: 1em;
+    }
   }
 }
 </style>
